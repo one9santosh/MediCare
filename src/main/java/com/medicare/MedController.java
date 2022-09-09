@@ -1,5 +1,6 @@
 package com.medicare;
 
+import java.security.Principal;
 import java.util.List;
 import java.util.logging.Logger;
 
@@ -10,15 +11,20 @@ import javax.servlet.http.HttpSession;
 import com.medicare.Medicine;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class MedController {
 @Autowired
 	MedDAO dao;
+
 Logger log=Logger.getAnonymousLogger();
 @RequestMapping("insertm")
 public ModelAndView insert(HttpServletRequest req,HttpServletResponse res) {
@@ -110,7 +116,7 @@ public ModelAndView geturunning(HttpServletRequest req,HttpServletResponse res) 
 	return mv;
 }
 
-@RequestMapping("addtocart")
+@RequestMapping("/addtocart")
 public ModelAndView adtoCart(HttpServletRequest req,HttpServletResponse res, 
 		@RequestParam("id") String id)    
 {
@@ -124,5 +130,19 @@ public ModelAndView adtoCart(HttpServletRequest req,HttpServletResponse res,
 	
 	
 	return mv;
+}
+
+@RestController
+public class SearchController{
+	@Autowired
+	MedRepo repo;
+// search handler
+	@GetMapping("/search/{query}")
+	public ResponseEntity<?> search(@PathVariable("query") String query)
+	{
+		System.out.println(query);
+		List<Medicine> med=repo.findByNameContaining(query);
+		return ResponseEntity.ok(med);
+	}
 }
 }

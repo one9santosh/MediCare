@@ -47,8 +47,7 @@
                         <ul>
                             <li><a href="#"><i class="fa fa-heart"></i> Wishlist</a></li>
                             <li><a href="cart.jsp"><i class="fa fa-user"></i> My Cart</a></li>
-                            <li><a href="checkout.jsp"><i class="fa fa-user"></i> Checkout</a></li>
-                            <li><a href="login.jsp"><i class="fa fa-user"></i> Login</a></li>
+                            
                             <li><a href="register.jsp"><i class="fa fa-user"></i> Sinup</a></li>
                         </ul>
                     </div>
@@ -101,7 +100,7 @@
 								Neurobion Forte 
 							</h2>
 						
-							<a class="caption button-radius" href="#"><span class="icon"></span>Shop now</a>
+							<a class="caption button-radius" href="newarrival.jsp"><span class="icon"></span>Shop now</a>
 						</div>
 					</li>
 					<li><img src="img/h4-slide2.jpg" alt="Slide">
@@ -110,14 +109,14 @@
 								by one, get one <span class="primary">50% <strong>off</strong></span>
 							</h2>
 							<h4 class="caption subtitle">Kids Supplement</h4>
-							<a class="caption button-radius" href="#"><span class="icon"></span>Shop now</a>
+							<a class="caption button-radius" href="newarrival.jsp"><span class="icon"></span>Shop now</a>
 						</div>
 					</li>
 					<li><img src="img/h4-slide3.jpg" alt="Slide">
 						<div class="caption-group">
 							<h4 class="caption subtitle">Hair supplement</h4>
 							<h4 class="caption subtitle">Select Item</h4>
-							<a class="caption button-radius" href="#"><span class="icon"></span>Shop now</a>
+							<a class="caption button-radius" href="newarrival.jsp"><span class="icon"></span>Shop now</a>
 						</div>
 					</li>
 				</ul>
@@ -292,34 +291,9 @@
                     </div>
                 </div>
                 
-                <div class="col-md-3 col-sm-6">
-                    <div class="footer-menu">
-                        <h2 class="footer-wid-title">Categories</h2>
-                        <ul>
-                            <li><a href="#">Mobile Phone</a></li>
-                            <li><a href="#">Home accesseries</a></li>
-                            <li><a href="#">LED TV</a></li>
-                            <li><a href="#">Computer</a></li>
-                            <li><a href="#">Gadets</a></li>
-                        </ul>                        
-                    </div>
-                </div>
+               
                 
-                <div class="col-md-3 col-sm-6">
-                    <div class="footer-newsletter">
-                        <h2 class="footer-wid-title">Newsletter</h2>
-                        <p>Sign up to our newsletter and get exclusive deals you wont find anywhere else straight to your inbox!</p>
-                        <div class="newsletter-form">
-                            <form action="#">
-                                <input type="email" placeholder="Type your email">
-                                <input type="submit" value="Subscribe">
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> <!-- End footer top area -->
+           <!-- End footer top area -->
     
     <div class="footer-bottom-area">
         <div class="container">

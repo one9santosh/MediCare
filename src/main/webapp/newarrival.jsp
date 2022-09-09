@@ -18,6 +18,16 @@ table, th, td {
   80%  { background: #33CC36; }
   100% { background: #33CCCC; }
 }
+.search-container{
+position:relative;
+}
+.search-result{
+position:absolute;
+background:white;
+width: 100%;
+padding:10px;
+display:none;
+}
 </style>
 <meta charset="ISO-8859-1">
 <title>MediCare</title>
@@ -32,37 +42,29 @@ body {
 </style>
 
 <center>
+<div class="search-container">
+<input type="text" name="" id="search-input" class="form-control" placeholder="Search For Medicine......" onkeyup="search()" >
+<div class="search-result">
+<!-- Result Here.... -->
 
-<input type="text" name="" id="myInput" placeholder="Search For Medicine......" onkeyup="serachFun()">
+
+</div>
+
+</div>
+
+
 
 <%List<Medicine> list=(List<Medicine>)request.getAttribute("list");  %>
 <table id="myTable" border="1" cellpadding = "10" cellspacing = "10" bordercolor = "red" bgcolor = "BlanchedAlmond" width="100%">
 <tr><th>ID</th><th>Name</th><th>Price</th><th>Action</th></tr>
 <% for(Medicine s:list){%>
-<tr><td><%=s.getId() %><td><%=s.getName() %></td><td><%=s.getPrice()%></td> <td><a href="addtocart?id=<%=s.getId()%>">Add To Cart</a></td></tr>
+<tr><td><%=s.getId() %><td><%=s.getName() %></td><td><%=s.getPrice()%></td> <td><a href="addtocart?id=<%=s.getId()%>">Buy Now</a></td></tr>
 <%}%> <br><br>
 </table><br><br>
 </center>
-<script type="text/javascript">
 
-const serachFun = () => {
-let filter = document.getElementById('myInput').value.toUpperCase();
-let myTable = document.getElementById('myTable');
-let tr = myTable.getElementsByTagName('tr');
+<script src="js/new.js"></script>
+<script src="js/jquery-3.4.1.min.js"></script>
 
-for(var i=0; i<tr.lenght; i++){
-let td = tr[i].getElementsByTagName('td')[1];
-if(td){
-	let textvalue = td.textContent || td.innerHTML;
-	if(textvalue.toUpperCase().indexOf(filter)> -1){
-    tr[i].style.display = "";
-		}else{
-       tr[i].style.display = "none";
-			}
-               }	
-          }
-       }
-
-</script>
 </body>
 </html>
